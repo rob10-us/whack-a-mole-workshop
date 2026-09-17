@@ -39,3 +39,13 @@ export function GameProvider({ children }) {
 
   return <GameContext.Provider value={value}>{children}</GameContext.Provider>;
 }
+
+export function useGame() {
+  const context = useContext(GameContext);
+
+  if (!context) {
+    throw Error("You need to use useGame inside GameProvider");
+  }
+
+  return context;
+}
