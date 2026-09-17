@@ -1,5 +1,6 @@
 import { useGame } from "./GameContext";
 import Welcome from "./Welcome";
+import MoleZone from "./MoleZone";
 
 export default function App() {
   const { playing } = useGame();
@@ -7,7 +8,14 @@ export default function App() {
   return (
     <>
       <h1>Whack-a-Mole</h1>
-      {playing ? <p>The game has begun!</p> : <Welcome />}
+      {playing ? (
+        <main className="game">
+          <p>The game has begun, whack those moles!</p>
+          <MoleZone />
+        </main>
+      ) : (
+        <Welcome />
+      )}
     </>
   );
 }
