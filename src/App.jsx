@@ -1,6 +1,7 @@
 import { useGame } from "./GameContext";
 import Welcome from "./Welcome";
 import MoleZone from "./MoleZone";
+import Scoreboard from "./Scoreboard";
 
 export default function App() {
   const { playing } = useGame();
@@ -11,6 +12,7 @@ export default function App() {
       {playing ? (
         <main className="game">
           <p>The game has begun, whack those moles!</p>
+          <Scoreboard />
           <MoleZone />
         </main>
       ) : (
